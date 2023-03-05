@@ -1,5 +1,7 @@
 package implementation;
 
+import java.util.Scanner;
+
 public class HeapSort {
     static int[] arr;
     static int size;
