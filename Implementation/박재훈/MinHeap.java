@@ -1,5 +1,6 @@
 package implementation;
 
+import exceptions.CustomNoSuchElementException;
 public class MinHeap implements Heap {
     //배열은 밴 첫 인덱스(0) 비우고 인덱스 1부터 채움(부모와 자식 인덱스 계산 쉬워짐)
     private int[] array;
