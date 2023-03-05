@@ -1,5 +1,7 @@
 package implementation;
 
+import exceptions.CustomNoSuchElementException;
+
 public class MaxHeap implements Heap {
     //배열은 밴 첫 인덱스(0) 비우고 인덱스 1부터 채움(부모와 자식 인덱스 계산 쉬워짐)
     private int[] array;
@@ -17,12 +19,12 @@ public class MaxHeap implements Heap {
     public int size() {
         return size;
     }
-    
+
     @Override
     public boolean isEmpty() {
         return size == 0;
     }
-    
+
     @Override
     public void add(int num) {
         //용량이 꽉찼으면 배열 크기를 2배로 확장, 기존 배열 정보를 복사
@@ -48,7 +50,7 @@ public class MaxHeap implements Heap {
         }
         array[idx] = num;
     }
-    
+
     @Override
     public int remove() {
         if(size == 0){
@@ -67,7 +69,7 @@ public class MaxHeap implements Heap {
             if(idx * 2 + 1 <= size && array[idx * 2] < array[idx * 2 + 1]) {
                 biggerChild = array[idx * 2 + 1];
                 biggerChildIdx = idx * 2 + 1;
-            //오른쪽 자식노드 없거나 왼쪽 자식노드가 더 큼
+                //오른쪽 자식노드 없거나 왼쪽 자식노드가 더 큼
             }else{
                 biggerChild = array[idx * 2];
                 biggerChildIdx = idx * 2;
@@ -83,7 +85,7 @@ public class MaxHeap implements Heap {
         array[idx] = num;
         return removedval;
     }
-    
+
     @Override
     public void clear() {
         size = 0;
