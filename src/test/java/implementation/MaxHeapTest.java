@@ -24,7 +24,7 @@ class MaxHeapTest {
     @DisplayName("isEmpty() 테스트 - True")
     @Test
     void isEmptyTest1() {
-        MinHeap emptyHeap = new MinHeap();
+        MaxHeap emptyHeap = new MaxHeap();
         assertThat(emptyHeap.isEmpty()).isTrue();
     }
     
@@ -56,7 +56,7 @@ class MaxHeapTest {
     @DisplayName("remove 테스트 - 비어있을 때 예외 발생")
     @Test
     void deleteTest2() {
-        MinHeap emptyHeap = new MinHeap();
+        MaxHeap emptyHeap = new MaxHeap();
         assertThrows(CustomNoSuchElementException.class, emptyHeap::remove);
     }
 }
